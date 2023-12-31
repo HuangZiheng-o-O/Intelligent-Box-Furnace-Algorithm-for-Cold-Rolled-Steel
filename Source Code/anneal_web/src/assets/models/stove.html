@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>罩式炉</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      /* 隐藏body窗口区域滚动条 */
+    }
+  </style>
+
+  <!--引入three.js三维引擎-->
+  <script src="http://www.yanhuangxueyuan.com/versions/threejsR92/build/three.js"></script>
+  <!--  引入热力图插件heatmap.js-->
+  <script src="https://cdn.bootcdn.net/ajax/libs/heatmap.js/2.0.0/heatmap.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+  import Heatmap from 'heatmap.js'
+
+  /**创建场景对象Scene*/
+  var scene = new THREE.Scene();
+  var heatmapInstance = h337.create({
+    container: document.querySelector('.heatmap')
+  });
+
+  heatmapInstance.setData(data);
+
+  var canvas = heatmapdiv.getElementsByTagName('canvas')[0];
+  let heatMapGeo = new THREE.PlaneGeometry(120,90);
+  let heatMapTexture = new THREE.Texture(canvas);
+  let heatMapMaterial = new THREE.MeshBasicMaterial({
+    map: heatMapTexture,
+    transparent:true
+  });
+  heatMapMaterial.map.needsUpdate = true;
+  var heatMapPlane = new THREE.Mesh(heatMapGeo,heatMapMaterial);
+  heatMapPlane.position.set(0,0.1,0);
+  heatMapPlane.rotation.x = -Math.PI/2;
+  scene.add(heatMapPlane);
+
+  var stove = new THREE.TextureLoader().load("src/assets/img/stove.png");
+
+</script>
+
+
+</body>
+</html>

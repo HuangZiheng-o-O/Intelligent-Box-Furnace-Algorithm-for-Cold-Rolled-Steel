@@ -1,0 +1,22 @@
+.content-wrapper {
+  background: #F2F2F2;
+  overflow-y: auto;
+}
+.module-wrapper {
+  display: flex;
+  justify-content: center;/*水平居中*/
+  align-items: center;/*垂直居中*/
+  margin: 15px;
+  padding: 10px 10px;
+  background: #fff;
+  border-radius: 15px;
+}
+.titleline {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;/*水平居中*/
+  align-items: center;/*垂直居中*/
+  font-size: x-large;
+  font-weight: bold;
+}
